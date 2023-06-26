@@ -31,7 +31,7 @@ int _cd(cmdinfo_t *info)
 			return (1);
 		}
 		_puts(_getenvvalue(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what should this be? */
+		chdir_ret =
 			chdir((dir = _getenvvalue(info, "OLDPWD=")) ? dir : "/");
 	}
 	else

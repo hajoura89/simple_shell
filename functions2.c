@@ -59,25 +59,17 @@ void free_info(cmdinfo_t *info, int all)
 	{
 		if (!info->cmd_buffer)
 			free(info->arg);
-
 		if (info->enviro)
 			free_list(&(info->enviro));
-
 		if (info->history)
 			free_list(&(info->history));
-
 		if (info->alias)
 			free_list(&(info->alias));
-
 		free_str(info->environ);
 		info->environ = NULL;
-
-		free_ptr((void **)&(info->cmd_buffer));
-		info->cmd_buffer = NULL;
-
+		free_ptr((void **)info->cmd_buffer);
 		if (info->read_fd > 2)
 			close(info->read_fd);
-
 		_putchar(BUF_FLUSH);
 	}
 }
