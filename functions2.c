@@ -6,7 +6,7 @@
  */
 void initialize_info(cmdinfo_t *info)
 {
-	// Set all fields of the info struct to their default values.
+	/* Set all fields of the info struct to their default values */
 	info->arg = NULL;
 	info->argv = NULL;
 	info->path = NULL;
@@ -37,7 +37,7 @@ void set_info(cmdinfo_t *info, char **av)
 		}
 		for (i = 0; info->argv && info->argv[i]; i++)
 		{
-			// Empty loop body
+			/* Empty loop body */
 		}
 		info->argc = i;
 		replace_alias(info);
@@ -58,28 +58,16 @@ void free_info(cmdinfo_t *info, int all)
 	if (all)
 	{
 		if (!info->cmd_buffer)
-		{
 			free(info->arg);
-			info->arg = NULL;
-		}
 
 		if (info->enviro)
-		{
 			free_list(&(info->enviro));
-			info->enviro = NULL;
-		}
 
 		if (info->history)
-		{
 			free_list(&(info->history));
-			info->history = NULL;
-		}
 
 		if (info->alias)
-		{
 			free_list(&(info->alias));
-			info->alias = NULL;
-		}
 
 		free_str(info->environ);
 		info->environ = NULL;
