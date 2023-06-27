@@ -29,7 +29,6 @@ int myshell(cmdinfo_t *info, char **av)
 			_putchar('\n');
 		free_info(info, 0);
 	}
-	create_history(info);
 	free_info(info, 1);
 	if (!is_interactive(info) && info->status)
 		exit(info->status);

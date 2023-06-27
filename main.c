@@ -35,7 +35,6 @@ int main(int ac, char **av)
 		info->read_fd = fd;
 	}
 	populate_envlist(info);
-	read_historyfile(info);
 	myshell(info, av);
 	return (EXIT_SUCCESS);
 }

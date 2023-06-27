@@ -1,3 +1,5 @@
 betty main.c
 ls
+pwd
+env
 exit

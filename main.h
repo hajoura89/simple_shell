@@ -18,8 +18,6 @@ extern char **environ;
 #define BUF_FLUSH -1
 #define GETLINE 0
 #define STRTOK 0
-#define HISTORY_FILE	"filename"
-#define HISTORY_MAX	4096
 #define LOWERCASE	1
 #define UNSIGNED	2
 #define NORMAL	0
@@ -152,11 +150,6 @@ int populate_envlist(cmdinfo_t *);
 char **get_environ(cmdinfo_t *);
 int _unsetenv(cmdinfo_t *, char *);
 int _setenv(cmdinfo_t *, char *, char *);
-char *get_hist_file(cmdinfo_t *info);
-int create_history(cmdinfo_t *info);
-int read_historyfile(cmdinfo_t *info);
-int addto_history_list(cmdinfo_t *info, char *buf, int linecount);
-int reindex_history(cmdinfo_t *info);
 list_t *add_node(list_t **, const char *, int);
 list_t *add_node_toend(list_t **, const char *, int);
 size_t print_str_list(const list_t *);
