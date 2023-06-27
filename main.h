@@ -13,26 +13,19 @@
 #include <sys/wait.h>
 
 extern char **environ;
-
 #define BUFFER_READ 1024
 #define BUFFER_WRITE 1024
 #define BUF_FLUSH -1
-
 #define GETLINE 0
 #define STRTOK 0
-
-#define HISTORY_FILE	".history_file"
+#define HISTORY_FILE	"file.txt"
 #define HISTORY_MAX	4096
-
 #define LOWERCASE	1
 #define UNSIGNED	2
-
 #define NORMAL	0
 #define OR		1
 #define AND		2
 #define CHAIN	3
-
-
 /**
  * struct llstr - singly linked list
  * @number: the number field
@@ -88,7 +81,6 @@ typedef struct command_info
 	int read_fd;
 	int historycount;
 } cmdinfo_t;
-
 /**
  * struct builtin_command - a built-in command
  * @command: string.
@@ -99,12 +91,8 @@ typedef struct builtin_command
 	char *command;
 	int (*function)(cmdinfo_t *);
 } builtin_command_t;
-
-/* functions */
-
 void _puts(char *);
 int _putchar(char);
-
 int _strlen(char *);
 int _strcmp(char *, char *);
 char *start_with(const char *, const char *);
