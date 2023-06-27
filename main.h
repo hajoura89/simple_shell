@@ -13,6 +13,8 @@
 #include <sys/wait.h>
 
 extern char **environ;
+#define HISTORY_FILE	"filename"
+#define HISTORY_MAX	4096
 #define BUFFER_READ 1024
 #define BUFFER_WRITE 1024
 #define BUF_FLUSH -1
@@ -165,5 +167,10 @@ void chain_check(cmdinfo_t *, char *, size_t *, size_t, size_t);
 int replace_alias(cmdinfo_t *);
 int replace_vars(cmdinfo_t *);
 int replace_string(char **, char *);
+char *get_hist_file(cmdinfo_t *info);
+int create_history(cmdinfo_t *info);
+int read_historyfile(cmdinfo_t *info);
+int addto_history_list(cmdinfo_t *info, char *buf, int linecount);
+int reindex_history(cmdinfo_t *info);
 
 #endif

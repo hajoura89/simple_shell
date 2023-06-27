@@ -75,6 +75,7 @@ ssize_t input_buf(cmdinfo_t *info, char **buffer, size_t *len)
 			}
 			info->linecount = 1;
 			remove_comments(*buffer);
+			addto_history_list(info, *buffer, info->historycount++);
 			{
 				*len = r;
 				info->cmd_buffer = buffer;

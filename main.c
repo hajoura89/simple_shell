@@ -10,7 +10,7 @@ int main(int ac, char **av)
 {
 	cmdinfo_t info[] = {
 		{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL,
-		NULL, NULL, 0, 0, NULL, 0, 0, 0}
+			NULL, NULL, 0, 0, NULL, 0, 0, 0}
 	};
 	int fd = 2;
 
@@ -35,6 +35,7 @@ int main(int ac, char **av)
 		info->read_fd = fd;
 	}
 	populate_envlist(info);
+	read_historyfile(info);
 	myshell(info, av);
 	return (EXIT_SUCCESS);
 }

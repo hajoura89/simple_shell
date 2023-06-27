@@ -29,6 +29,7 @@ int myshell(cmdinfo_t *info, char **av)
 			_putchar('\n');
 		free_info(info, 0);
 	}
+	create_history(info);
 	free_info(info, 1);
 	if (!is_interactive(info) && info->status)
 		exit(info->status);
@@ -155,7 +156,7 @@ void get_command(cmdinfo_t *info)
 	else
 	{
 		if ((is_interactive(info) || _getenvvalue(info, "PATH=")
-			|| info->argv[0][0] == '/') && is_command(info, info->argv[0]))
+					|| info->argv[0][0] == '/') && is_command(info, info->argv[0]))
 			fork_command(info);
 		else if (*(info->arg) != '\n')
 		{
