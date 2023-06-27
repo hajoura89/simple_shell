@@ -18,7 +18,7 @@ extern char **environ;
 #define BUF_FLUSH -1
 #define GETLINE 0
 #define STRTOK 0
-#define HISTORY_FILE	"file.txt"
+#define HISTORY_FILE	"filename"
 #define HISTORY_MAX	4096
 #define LOWERCASE	1
 #define UNSIGNED	2
